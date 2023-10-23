@@ -28,14 +28,24 @@ public class Listener implements ActionListener {
             }
             points.clear();
         } else if (e.getSource() == gui.viewY) {
-            ArrayList<Point> points = dm.viewByY();
+            ArrayList<Point> points = null;
+            try {
+                points = dm.viewByY();
+            } catch (FileNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
 
             gui.txtArea.append("--------View by Y-----------"+"\n");
             for (Point p : points) {
                 gui.txtArea.append(p.getX()+" "+ p.getY()+" "+ p.getZ()+"\n");
             }
         } else if (e.getSource() == gui.viewZ) {
-            ArrayList<Point> points = dm.viewByZ();
+            ArrayList<Point> points = null;
+            try {
+                points = dm.viewByZ();
+            } catch (FileNotFoundException ex) {
+
+            }
 
             gui.txtArea.append("-------------View by Z--------"+"\n");
             for (Point p : points) {
