@@ -7,12 +7,13 @@ public class DataManager {
     private MultiList list;
 
 
-    private String filePath= "src/points.txt";
+    private String filePath = "src/points.txt";
 
     public DataManager() throws FileNotFoundException {
         list = new MultiList();
-    readFile(filePath); //read the txt file and populate the multi list in MultiList class.
+        readFile(filePath); //read the txt file and populate the multi list in MultiList class.
     }
+
     public void readFile(String fileName) throws FileNotFoundException {
         // Read input file and populate list
         File file = new File(filePath);
@@ -36,17 +37,6 @@ public class DataManager {
     }
 
 
-
-    public void viewPoints(String coord) {
-        if (coord.equals("View X")) {
-            viewByX();
-        } else if (coord.equals("View Y")) {
-            viewByY();
-        } else if(coord.equals("View Z")){
-            viewByZ();
-        }
-    }
-
     public void addPointFromUser(Point p) throws IOException {
         // Update data file
         BufferedWriter bw = new BufferedWriter(new FileWriter(filePath, true));
@@ -55,15 +45,21 @@ public class DataManager {
         bw.close();
     }
 
-    public ArrayList<Point> viewByX() {
-      return list.getListX();
+    public ArrayList<Point> viewByX() throws FileNotFoundException {
+        list.getListX().clear();
+        readFile(filePath);
+        return list.getListX();
     }
 
-    public ArrayList<Point> viewByY() {
-       return list.getListY();
+    public ArrayList<Point> viewByY() throws FileNotFoundException {
+        list.getListY().clear();
+        readFile(filePath);
+        return list.getListY();
     }
 
-    public ArrayList<Point> viewByZ() {
+    public ArrayList<Point> viewByZ() throws FileNotFoundException {
+        list.getListZ().clear();
+        readFile(filePath);
         return list.getListZ();
     }
 
