@@ -51,13 +51,13 @@ public class DataManager {
     }
 
     public ArrayList<Point> viewByY() throws FileNotFoundException {
-        list.getListX().clear();
+        list.getListY().clear();
         readFile(filePath);
        return list.getListY();
     }
 
     public ArrayList<Point> viewByZ() throws FileNotFoundException {
-        list.getListX().clear();
+        list.getListZ().clear();
         readFile(filePath);
         return list.getListZ();
     }

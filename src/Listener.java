@@ -39,6 +39,7 @@ public class Listener implements ActionListener {
             for (Point p : points) {
                 gui.txtArea.append(p.getX()+" "+ p.getY()+" "+ p.getZ()+"\n");
             }
+            points.clear();
         } else if (e.getSource() == gui.viewZ) {
             ArrayList<Point> points = null;
             try {
@@ -46,11 +47,11 @@ public class Listener implements ActionListener {
             } catch (FileNotFoundException ex) {
 
             }
-
             gui.txtArea.append("-------------View by Z--------"+"\n");
             for (Point p : points) {
                  gui.txtArea.append(p.getX()+" "+ p.getY()+" "+ p.getZ()+"\n");
             }
+            points.clear();
         } else if (e.getSource() == gui.add) {
             // Show add point dialog
             Point p = getPointFromUser();
