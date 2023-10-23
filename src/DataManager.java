@@ -36,17 +36,6 @@ public class DataManager {
     }
 
 
-
-    public void viewPoints(String coord) {
-        if (coord.equals("View X")) {
-            viewByX();
-        } else if (coord.equals("View Y")) {
-            viewByY();
-        } else if(coord.equals("View Z")){
-            viewByZ();
-        }
-    }
-
     public void addPointFromUser(Point p) throws IOException {
         // Update data file
         BufferedWriter bw = new BufferedWriter(new FileWriter(filePath, true));
