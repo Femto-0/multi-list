@@ -44,15 +44,21 @@ public class DataManager {
         bw.close();
     }
 
-    public ArrayList<Point> viewByX() {
+    public ArrayList<Point> viewByX() throws FileNotFoundException {
+        list.getListX().clear();
+        readFile(filePath);
       return list.getListX();
     }
 
-    public ArrayList<Point> viewByY() {
+    public ArrayList<Point> viewByY() throws FileNotFoundException {
+        list.getListX().clear();
+        readFile(filePath);
        return list.getListY();
     }
 
-    public ArrayList<Point> viewByZ() {
+    public ArrayList<Point> viewByZ() throws FileNotFoundException {
+        list.getListX().clear();
+        readFile(filePath);
         return list.getListZ();
     }
 

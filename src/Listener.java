@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -15,11 +16,17 @@ public class Listener implements ActionListener {
 
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == gui.viewX) {
-            ArrayList<Point> points = dm.viewByX();
+            ArrayList<Point> points = null;
+            try {
+                points = dm.viewByX();
+            } catch (FileNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
             gui.txtArea.append("---------View by X----------"+"\n"); //update UI
             for (Point p : points) {
                 gui.txtArea.append(p.getX()+" "+ p.getY()+" "+ p.getZ()+"\n");
             }
+            points.clear();
         } else if (e.getSource() == gui.viewY) {
             ArrayList<Point> points = dm.viewByY();
 
