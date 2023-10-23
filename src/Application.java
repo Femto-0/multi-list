@@ -12,6 +12,5 @@ public class Application {
         // Launch GUI
         view.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         view.pack();
-        view.setVisible(true);
     }
 }

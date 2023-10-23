@@ -16,20 +16,18 @@ public class GUI extends JFrame {
 
     // Add to GUI
 
-    public GUI(DataManager dm ) throws FileNotFoundException {
-JFrame frame = new JFrame();
+    public GUI(DataManager dm) throws FileNotFoundException {
+        JFrame frame = new JFrame("Multi-list");
         listener = new Listener(dm, this);
-        LayoutManager flowLayout= new FlowLayout();
-        setLayout(flowLayout);
+        frame.getContentPane().setLayout(new FlowLayout());
         // Initialize buttons
         viewX = new JButton("View X");
         viewY = new JButton("View Y");
         viewZ = new JButton("View Z");
         add = new JButton("Add Point");
         exit = new JButton("Exit");
-        txtArea= new JTextArea(20,20);
-        scrollPane= new JScrollPane(txtArea);
-
+        txtArea = new JTextArea(20, 20);
+        scrollPane = new JScrollPane(txtArea, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
         // Add action listeners
         viewX.addActionListener(listener);
@@ -39,13 +37,14 @@ JFrame frame = new JFrame();
         exit.addActionListener(listener);
 
         // Add buttons to JFrame
-        add(viewX);
-        add(viewY);
-        add(viewZ);
-        add(add);
-        add(exit);
-        add(txtArea);
-        frame.add(scrollPane);
+        frame.setVisible(true);
+        frame.setSize(300, 500);
+        frame.add(viewX);
+        frame.add(viewY);
+        frame.add(viewZ);
+        frame.add(add);
+        frame.add(exit);
+        frame.getContentPane().add(scrollPane);
 
     }
 }
