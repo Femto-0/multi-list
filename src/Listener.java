@@ -22,9 +22,9 @@ public class Listener implements ActionListener {
             } catch (FileNotFoundException ex) {
                 throw new RuntimeException(ex);
             }
-            gui.txtArea.append("---------View by X----------"+"\n"); //update UI
+            gui.txtArea.append("---------View by X----------" + "\n"); //update UI
             for (Point p : points) {
-                gui.txtArea.append(p.getX()+" "+ p.getY()+" "+ p.getZ()+"\n");
+                gui.txtArea.append(p.getX() + " " + p.getY() + " " + p.getZ() + "\n");
             }
             points.clear();
         } else if (e.getSource() == gui.viewY) {
@@ -35,9 +35,9 @@ public class Listener implements ActionListener {
                 throw new RuntimeException(ex);
             }
 
-            gui.txtArea.append("--------View by Y-----------"+"\n");
+            gui.txtArea.append("--------View by Y-----------" + "\n");
             for (Point p : points) {
-                gui.txtArea.append(p.getX()+" "+ p.getY()+" "+ p.getZ()+"\n");
+                gui.txtArea.append(p.getX() + " " + p.getY() + " " + p.getZ() + "\n");
             }
             points.clear();
         } else if (e.getSource() == gui.viewZ) {
@@ -47,9 +47,9 @@ public class Listener implements ActionListener {
             } catch (FileNotFoundException ex) {
 
             }
-            gui.txtArea.append("-------------View by Z--------"+"\n");
+            gui.txtArea.append("-------------View by Z--------" + "\n");
             for (Point p : points) {
-                 gui.txtArea.append(p.getX()+" "+ p.getY()+" "+ p.getZ()+"\n");
+                gui.txtArea.append(p.getX() + " " + p.getY() + " " + p.getZ() + "\n");
             }
             points.clear();
         } else if (e.getSource() == gui.add) {

@@ -7,12 +7,13 @@ public class DataManager {
     private MultiList list;
 
 
-    private String filePath= "src/points.txt";
+    private String filePath = "src/points.txt";
 
     public DataManager() throws FileNotFoundException {
         list = new MultiList();
-    readFile(filePath); //read the txt file and populate the multi list in MultiList class.
+        readFile(filePath); //read the txt file and populate the multi list in MultiList class.
     }
+
     public void readFile(String fileName) throws FileNotFoundException {
         // Read input file and populate list
         File file = new File(filePath);
@@ -47,13 +48,13 @@ public class DataManager {
     public ArrayList<Point> viewByX() throws FileNotFoundException {
         list.getListX().clear();
         readFile(filePath);
-      return list.getListX();
+        return list.getListX();
     }
 
     public ArrayList<Point> viewByY() throws FileNotFoundException {
         list.getListY().clear();
         readFile(filePath);
-       return list.getListY();
+        return list.getListY();
     }
 
     public ArrayList<Point> viewByZ() throws FileNotFoundException {
