@@ -1,0 +1,9 @@
+--> The complexity for the addPointFromUser(Point p) method is 0(1) since we are simply adding new points to the list.
+
+--> The complexity for the viewBy() method is:
+  1. Clearing the list has a complexity of 0(1).
+  2. Reading the file has a complexity that depends on number of points in the file. Hence, it has a time complexity of 0(N).
+  3. Populating the list has a time complexity of 0(N).
+Hence, total time complexity for this method would be 0(N).
+
+--> An efficient approach to this application would be to read only the points that the user wants to viewBy instead of going through the whole .txt file's data. That would mean making changes in the readFile(filePath) method which is definitely doable.
